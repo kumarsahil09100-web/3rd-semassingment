@@ -3,8 +3,8 @@ impot fs from 'fs';
 const data = fs.readFileSync('index.html');
  const server = http.createServer((req, res) => {
     console.log("hello");
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('Hello, World!\n');
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.end(data);
     if(req.url === "/"){
     res.end("Hello from the home page");
 } else if(req.url === "/about"){
@@ -13,7 +13,7 @@ const data = fs.readFileSync('index.html');
 else if(req.url === "/contact"){
     res.end("Contact page");  
 
-});   
+};   
     
 
 
